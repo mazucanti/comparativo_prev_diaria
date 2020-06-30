@@ -10,6 +10,14 @@ import pandas as pd
 import datetime as dt
 from pathlib import Path
 
+from sincrawl.misc_sin.misc_sin.spiders.a_dona_aranha import PDP
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+
+process = CrawlerProcess(get_project_settings())
+process.crawl(Sintegre_Spider)
+process.start()
+
 
 def main():
     df1, df2 = importa_planilhas()
