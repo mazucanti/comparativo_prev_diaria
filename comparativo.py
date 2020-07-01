@@ -95,4 +95,4 @@ def exporta_df(tabelas):
                 df.to_excel(writer, sheet_name = nomes[i], startrow = formato[j])
         
     
-# main()
+main()
