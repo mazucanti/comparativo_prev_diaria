@@ -9,14 +9,12 @@ Created on Wed Jan  8 13:35:30 2020
 import pandas as pd
 import datetime as dt
 from pathlib import Path
+import os
 
-from sincrawl.misc_sin.misc_sin.spiders.a_dona_aranha import PDP
-from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+from sincrawl.implementa import RodaPDP
 
-process = CrawlerProcess(get_project_settings())
-process.crawl(PDP)
-process.start()
+aranha = RodaPDP()
+aranha.roda()
 
 
 def main():
@@ -97,4 +95,4 @@ def exporta_df(tabelas):
                 df.to_excel(writer, sheet_name = nomes[i], startrow = formato[j])
         
     
-main()
+# main()
