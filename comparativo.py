@@ -16,6 +16,7 @@ from sincrawl.implementa import RodaPDP
 aranha = RodaPDP()
 aranha.roda()
 
+import org_arq
 
 def main():
     df1, df2 = importa_planilhas()
@@ -94,5 +95,8 @@ def exporta_df(tabelas):
             for j, df in enumerate(tabela):
                 df.to_excel(writer, sheet_name = nomes[i], startrow = formato[j])
         
-    
-main()
+try:   
+    main()
+
+except FileNotFoundError:
+    print("O arquivo não foi encontrado!\nVerifique mais tarde se ele foi lançado no sintegre")
