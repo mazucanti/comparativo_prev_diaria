@@ -22,7 +22,6 @@ def main():
     files = [diretorio for diretorio in diretorios if diretorio.is_file()]
     for file in files:
         if file.suffix == ".xls":
-            print(file._str)
             shutil.copy(file._str, 'entradas')
         
         os.unlink(file)
